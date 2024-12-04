@@ -1,0 +1,177 @@
+/* sidebar.css */
+
+/* General Sidebar Styling */
+#transcription-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    background-color: #1e1e1e;
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.5);
+    z-index: 100000; /* Ensures the sidebar is above all other elements */
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Header Styling */
+  #transcription-sidebar header {
+    background-color: #2d2d2d;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #3c3c3c;
+    position: relative;
+  }
+  
+  #transcription-sidebar header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #00bfa5;
+  }
+  
+  /* Close Button Styling */
+  #transcription-sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  #transcription-sidebar .close-btn:hover {
+    color: #ff5252;
+  }
+  
+  /* Controls Section */
+  #transcription-sidebar #controls {
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #3c3c3c;
+  }
+  
+  #transcription-sidebar #controls button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  #transcription-sidebar #controls button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Start Button */
+  #start-btn {
+    background-color: #00bfa5;
+    color: #ffffff;
+  }
+  
+  #start-btn:hover:not(:disabled) {
+    background-color: #00c4aa;
+    transform: scale(1.05);
+  }
+  
+  /* Stop Button */
+  #stop-btn {
+    background-color: #ff5252;
+    color: #ffffff;
+  }
+  
+  #stop-btn:hover:not(:disabled) {
+    background-color: #ff6b6b;
+    transform: scale(1.05);
+  }
+  
+  /* Transcriptions Display */
+  #transcription-sidebar #transcriptions {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #1e1e1e;
+  }
+  
+  /* Transcription Item */
+  .transcription-item {
+    background-color: #2d2d2d;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s ease;
+  }
+  
+  .transcription-item:hover {
+    background-color: #3c3c3c;
+  }
+  
+  /* Timestamp Styling */
+  .transcription-item span.timestamp {
+    display: block;
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+  }
+  
+  /* Original Text Styling */
+  .transcription-item p.text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  /* Processed Response Styling */
+  .transcription-item p.response {
+    margin: 8px 0 0 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #a9dfbf;
+    background-color: #34495e;
+    padding: 8px;
+    border-radius: 6px;
+  }
+  
+  /* Scrollbar Styling */
+  #transcription-sidebar #transcriptions::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #transcription-sidebar #transcriptions::-webkit-scrollbar-track {
+    background: #2d2d2d;
+  }
+  
+  #transcription-sidebar #transcriptions::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 400px) {
+    #transcription-sidebar {
+      width: 100%;
+    }
+  }
+  
+  /* loading-gif style for chat */
+  .loading-gif {
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
